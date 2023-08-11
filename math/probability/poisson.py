@@ -31,7 +31,7 @@ class Poisson:
         event = 1
         for i in range(1, k + 1):
             event *= i
-        return (self.lambtha ** k * 2.7183 ** (-self.lambtha)) / event
+        return (self.lambtha ** k * 2.7182818285 ** (-self.lambtha)) / event
 
     def cdf(self, k):
         """ Calculates the value of the CDF for a given number of “successes”
