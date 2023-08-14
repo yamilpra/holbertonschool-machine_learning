@@ -18,7 +18,7 @@ class Normal:
             if len(data) < 2:
                 raise ValueError('data must contain multiple values')
             self.mean = sum(data) / len(data)
-            self.stddev = (sum([x - self.mean) ** 2 for x in data]) /
+            self.stddev = (sum([(x - self.mean) ** 2 for x in data]) /
                            len(data)) ** 0.5
 
     def z_score(self, x):
@@ -32,12 +32,12 @@ class Normal:
     def pdf(self, x):
         """Calculates the value of the PDF for a given x-value"""
         return (2.7182818285 ** (-(x - self.mean) ** 2 /
-                                    (2 * self.stddev ** 2 ))) /\
+                                 (2 * self.stddev ** 2))) /\
             (self.stddev * (2 * 3.1415926536) ** 0.5)
 
     def cdf(self, x):
         """Calculates the value of the CDF for a given x-value"""
         x = (x - self.mean) / (self.stddev * 2 ** 0.5)
         erf = (2 / (3.1415926536)**0.5) * (x - x**3 /
-                                            3+x**5/10-x**7/42+x**9/216)
+                                           3+x**5/10-x**7/42+x**9/216)
         return (1 + erf) / 2
