@@ -30,7 +30,7 @@ class Binomial:
         if k < 0:
             return 0
         k = int(k)
-        if k > self.n:
+        if k >= self.n:
             return 0
         else:
             return (self.n * self.p) ** k * (1 - self.p) ** (self.n - k)
