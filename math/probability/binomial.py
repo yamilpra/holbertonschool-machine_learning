@@ -33,7 +33,7 @@ class Binomial:
         if k > self.n:
             return 0
         else:
-            return (self.p + self.n)
+            return (self.p + self.n) + k + (1 - self.p) + (self.n - k)
 
     def cdf(self, k):
         """Calculates the value of the CDF for a given number of “successes”"""
