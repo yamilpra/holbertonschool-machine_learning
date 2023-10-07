@@ -10,5 +10,6 @@ def create_placeholders(nx, classes):
     nx: the number of feature columns in our data
     classes: the number of classes in our classifier
     """
-    return tf.placeholder(float, shape=[None, nx], name='x'), tf.placeholder(
-            float, shape=[None, classes], name='y')
+    x = tf.placeholder(float, shape=(None, nx), name="x")
+    y = tf.placeholder(float, shape=(None, classes), name="y")
+    return x, y
